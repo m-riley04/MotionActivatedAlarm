@@ -18,19 +18,19 @@ void countdown_beeps(uint8_t buzzer_pin, int beeps, unsigned int frequency = 100
 uint16_t read_lidar(TFMini &tfmini, unsigned long readDelay = 50);
 
 void setup() {
+  // Initialize board pin modes
+  pinMode(LED_BUILTIN, OUTPUT);
+  pinMode(PIN_BUZZER, OUTPUT);
+
+  // Initialize the serial
   Serial.begin(9600);
   while (!Serial); // wait for serial port to connect. Needed for native USB port only
 
   // Send message to serial
   Serial.println ("Initializing...");
-
-  // Initialize board pin modes
-  pinMode(LED_BUILTIN, OUTPUT);
-  pinMode(PIN_BUZZER, OUTPUT); // Set buzzer - pin 9 as an output
-
   mySerial.begin(TFMINI_BAUDRATE);
 
-  //Initialize the TF Mini sensor
+  // Initialize the TF Mini sensor
   tfmini.begin(&mySerial);
 }
 
