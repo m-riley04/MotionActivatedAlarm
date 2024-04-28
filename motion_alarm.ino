@@ -79,4 +79,9 @@ void countdown_beeps(uint8_t buzzerPin, int beeps, unsigned int frequency = 1000
     delay(beepGapDuration);
   }
 }
+
+uint16_t read_lidar(TFMini &tfmini, unsigned long readDelay = 50) {
+  uint16_t d = tfmini.getDistance();
+  delay(readDelay);
+  return d;
 }
