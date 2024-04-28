@@ -17,6 +17,7 @@ uint16_t distanceBuffer = 10;
 void countdown_beeps(uint8_t buzzer_pin, int beeps, unsigned int frequency = 1000, unsigned long beepDuration = 100, unsigned long beepGapDuration = 1000);
 uint16_t read_lidar(TFMini &tfmini, unsigned long readDelay = 50);
 void check_distance(uint16_t distance, uint16_t distanceThreshold, uint16_t buffer = 5, int buzzerPin = 9, int ledPin = LED_BUILTIN);
+void(* resetFunc) (void) = 0; //declare reset function @ address 0
 
 void setup() {
   // Initialize board pin modes
