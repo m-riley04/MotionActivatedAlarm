@@ -45,4 +45,18 @@ void loop() {
   // Get the distance
   uint16_t distance = read_lidar(tfmini);
 
+  // Check if something crosses the beam
+  if ((distance+distanceBuffer) < minDistance) {
+    // Turn on the on-board LED
+    digitalWrite(LED_BUILTIN, HIGH);
+
+    // Set off the alarm
+    tone(PIN_BUZZER, 1000);
+  } else {
+    // Turn off the LED
+    digitalWrite(LED_BUILTIN, LOW);
+
+    // Turn off the tone
+    noTone(PIN_BUZZER);
+  }
 }
