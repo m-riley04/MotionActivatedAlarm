@@ -32,6 +32,13 @@ void setup() {
 
   // Initialize the TF Mini sensor
   tfmini.begin(&mySerial);
+
+  // Get the initial/max distance
+  countdown_beeps(PIN_BUZZER, 3); // Tell the user that it is reading the distance
+  while (minDistance == 0 || minDistance > 1000) {
+    minDistance = read_lidar(tfmini);
+  }
+
 }
 
 void loop() {
