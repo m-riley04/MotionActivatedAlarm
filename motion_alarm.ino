@@ -59,4 +59,12 @@ void loop() {
     // Turn off the tone
     noTone(PIN_BUZZER);
   }
+
+  // Print data to serial
+  Serial.print("Distance: ");
+  Serial.print(distance);
+  Serial.print(" cm      Min Distance: ");
+  Serial.print(minDistance);
+  Serial.println(" cm");
+
 }
