@@ -67,4 +67,8 @@ void loop() {
   Serial.print(minDistance);
   Serial.println(" cm");
 
+  // Delay to wait for catchups
+  delay(25);
+}
+
 }
