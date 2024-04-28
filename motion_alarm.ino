@@ -39,7 +39,6 @@ void setup() {
   while (minDistance == 0 || minDistance > 1000) {
     minDistance = read_lidar(tfmini);
   }
-
 }
 
 void loop() {
