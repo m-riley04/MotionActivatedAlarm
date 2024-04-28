@@ -42,6 +42,7 @@ void setup() {
 }
 
 void loop() {
-  // put your main code here, to run repeatedly:
+  // Get the distance
+  uint16_t distance = read_lidar(tfmini);
 
 }
