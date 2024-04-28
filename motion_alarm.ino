@@ -12,7 +12,7 @@ TFMini tfmini;
 
 // Initialize global vars
 uint16_t minDistance = 0;
-uint16_t distanceBuffer = 5;
+uint16_t distanceBuffer = 10;
 
 void countdown_beeps(uint8_t buzzer_pin, int beeps, unsigned int frequency = 1000, unsigned long beepDuration = 100, unsigned long beepGapDuration = 1000);
 uint16_t read_lidar(TFMini &tfmini, unsigned long readDelay = 50);
