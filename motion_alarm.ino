@@ -71,4 +71,12 @@ void loop() {
   delay(25);
 }
 
+void countdown_beeps(uint8_t buzzerPin, int beeps, unsigned int frequency = 1000, unsigned long beepDuration = 100, unsigned long beepGapDuration = 1000) {
+  for (int i = 0; i < beeps; i++) {
+    tone(buzzerPin, frequency);
+    delay(beepDuration);
+    noTone(PIN_BUZZER);
+    delay(beepGapDuration);
+  }
+}
 }
